@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-13T12:41:45.139Z",
+  "url": "http://127.0.0.1:4175/",
+  "checks": [
+    "First real frame is rendered and loading overlay is gone",
+    "First mount leaves one canvas",
+    "Poem has four separate, ordered entries with original punctuation",
+    "orioles: authored camera, matching selection, and same scene",
+    "egrets: authored camera, matching selection, and same scene",
+    "window: authored camera, matching selection, and same scene",
+    "boats: authored camera, matching selection, and same scene",
+    "Rapid switching settles at the latest requested view",
+    "Starting a drag interrupts camera flight",
+    "Selecting a verse during a drag reaches the latest destination",
+    "Upward view remains above the horizon",
+    "Leaving an upward view restores the boat framing",
+    "Manual dragging rotates the camera",
+    "Wheel input changes viewing distance",
+    "Pause freezes scenery animation",
+    "Paused scenery still permits camera navigation",
+    "Resume restarts scenery animation",
+    "Verse buttons support keyboard activation",
+    "Tab moves through verses in original order",
+    "Source dialog names the edition and keeps the full poem",
+    "Escape closes the source dialog",
+    "Overview clears verse selection and preserves the scene",
+    "Tablet-width resizing fits the page without overflow",
+    "System reduced motion directly selects the destination",
+    "Reduced motion freezes nonessential scenery",
+    "Manual reduced-motion control updates both behavior and state",
+    "Context-loss simulation is supported",
+    "Graphics interruption shows recovery guidance and readable poetry",
+    "Restoring graphics resumes the same scene",
+    "Retry simulation can lose graphics again",
+    "Retry disposes the old scene and leaves one canvas",
+    "Simulated mobile uses capped density and compact quality",
+    "Simulated mobile has no horizontal overflow",
+    "Mobile orioles: matching verse and valid rendering",
+    "Mobile orioles: choosing the verse returns the landscape to view",
+    "Mobile egrets: matching verse and valid rendering",
+    "Mobile egrets: choosing the verse returns the landscape to view",
+    "Mobile window: matching verse and valid rendering",
+    "Mobile window: choosing the verse returns the landscape to view",
+    "Mobile boats: matching verse and valid rendering",
+    "Mobile boats: choosing the verse returns the landscape to view",
+    "Simulated single-finger touch rotates the scene",
+    "Simulated two-finger pinch changes viewing distance",
+    "Narrow mobile width keeps all poem text within the page",
+    "Final production page has no uncaught exceptions or console errors",
+    "Automated accessibility audit has no confirmed violations",
+    "Unavailable WebGL preserves all poem text and a retry button",
+    "React StrictMode remount leaves a single canvas",
+    "StrictMode scene continues rendering",
+    "Development lifecycle has no uncaught exceptions"
+  ],
+  "metrics": [
+    {
+      "view": "orioles",
+      "fps": 60,
+      "drawCalls": 60,
+      "triangles": 411650
+    },
+    {
+      "view": "egrets",
+      "fps": 60,
+      "drawCalls": 111,
+      "triangles": 412262
+    },
+    {
+      "view": "window",
+      "fps": 60,
+      "drawCalls": 8,
+      "triangles": 409922
+    },
+    {
+      "view": "boats",
+      "fps": 60,
+      "drawCalls": 17,
+      "triangles": 410942
+    }
+  ],
+  "realDevice": false,
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+    "viewport": [
+      1440,
+      960
+    ],
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+  },
+  "console": "[log] THREE.WebGLRenderer: Context Lost.\n[log] THREE.WebGLRenderer: Context Restored.\n[log] THREE.WebGLRenderer: Context Lost.",
+  "errors": "",
+  "accessibility": {
+    "success": true,
+    "data": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 55,
+        "incomplete": 1,
+        "passes": 34,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 8,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span>·</span>",
+              "target": [
+                ".poet > span:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements",
+              "html": "<p class=\"intro\">四句诗，一扇窗。<br>在草堂里，望见整个春天。</p>",
+              "target": [
+                ".intro"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>全景漫游</span>",
+              "target": [
+                ".scene-tag > span:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>蜀 地</span>",
+              "target": [
+                ".scene-signature > span:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>春 光</span>",
+              "target": [
+                ".scene-signature > span:nth-child(3)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span class=\"mobile-hint\">单指环顾<span class=\"hint-separator\" aria-hidden=\"true\">·</span>双指缩放</span>",
+              "target": [
+                ".mobile-hint"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"hint-separator\" aria-hidden=\"true\">·</span>",
+              "target": [
+                ".mobile-hint > .hint-separator[aria-hidden=\"true\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<button type=\"button\" class=\"overview-button\" data-testid=\"overview\" aria-pressed=\"true\">",
+              "target": [
+                ".overview-button"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275012000
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4175/",
+      "violations": []
+    },
+    "error": null
+  },
+  "success": true
+}
