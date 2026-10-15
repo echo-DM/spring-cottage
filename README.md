@@ -6,14 +6,14 @@
 
 ## 本地运行
 
-需要 Node.js 22.12+ 和 pnpm。
+需要 Node.js 22.13+ 和 pnpm（版本由 `package.json` 的 `packageManager` 指定）。
 
 ```sh
 pnpm install
 pnpm dev --port 5175
 ```
 
-开发页面：<http://localhost:5175/>。
+开发页面：<http://localhost:5175/spring-cottage/>。
 
 ```sh
 pnpm check                         # TypeScript 类型检查
@@ -23,7 +23,18 @@ pnpm build                         # 类型检查与生产构建，输出 dist/
 pnpm preview --port 4175 --strictPort
 ```
 
-生产预览：<http://localhost:4175/>。Vite 使用相对资源路径，可将 `dist/` 部署到静态站点的子目录。所有景物均程序化生成，无需外部贴图、音频或字体请求。
+生产预览：<http://localhost:4175/spring-cottage/>。Vite 的资源基础路径为 `/spring-cottage/`，与 GitHub Pages 仓库站点路径一致。所有景物均程序化生成，无需外部贴图、音频或字体请求。
+
+## GitHub Pages 部署
+
+目标地址：<https://echo-dm.github.io/spring-cottage/>。
+
+1. 在 GitHub 仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
+2. 将配置提交并推送至 `main`；`.github/workflows/deploy.yml` 会自动安装依赖、检查代码、构建并发布 `dist/`。
+3. 也可在 **Actions → Deploy to GitHub Pages → Run workflow** 手动触发，选择 `main` 分支。
+4. 等待构建和部署任务成功后，打开目标地址确认场景与交互正常。
+
+工作流使用 Node.js 22 和项目指定的 pnpm 版本，通过 `pnpm install --frozen-lockfile` 安装依赖；只有 lint 与生产构建成功才会部署。部署使用内置 `GITHUB_TOKEN`，无需另配发布密钥。构建通过只代表产物生成成功，实际上线以 Actions 部署结果及公开页面验证为准。
 
 ## 操作
 
@@ -60,9 +71,9 @@ pnpm preview --port 4175 --strictPort
 先确保 `agent-browser` CLI 和 Chromium 已安装，在另一个终端启动生产预览，然后运行：
 
 ```sh
-pnpm qa http://127.0.0.1:4175/
+pnpm qa http://127.0.0.1:4175/spring-cottage/
 # 同时检查开发环境 StrictMode，需另行启动开发服务：
-pnpm qa http://127.0.0.1:4175/ http://127.0.0.1:5175/
+pnpm qa http://127.0.0.1:4175/spring-cottage/ http://127.0.0.1:5175/spring-cottage/
 ```
 
 结果写入 `docs/qa-results.json`，截图写入 `docs/screenshots/`。完整覆盖范围与限制见 [验收记录](docs/acceptance.md)。模拟手机使用桌面 Chromium 的设备模拟，真实手机尚未验证。
